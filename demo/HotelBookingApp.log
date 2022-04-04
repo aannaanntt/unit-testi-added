@@ -1,0 +1,176 @@
+2022-04-04 11:18:21 [main] INFO  c.h.b.c.CustomerControllerTest logStarting (55) - Starting CustomerControllerTest using Java 1.8.0_181 on LP-5CD151G8G4 with PID 53724 (started by anant.mishra in C:\Users\anant.mishra\Documents\workspace-sts-3.9.9.RELEASE\demo)
+2022-04-04 11:18:21 [main] DEBUG c.h.b.c.CustomerControllerTest logStarting (56) - Running with Spring Boot v2.6.5, Spring v5.3.17
+2022-04-04 11:18:21 [main] INFO  c.h.b.c.CustomerControllerTest logStartupProfileInfo (640) - No active profile set, falling back to 1 default profile: "default"
+2022-04-04 11:18:25 [main] WARN  o.s.w.c.s.GenericWebApplicationContext refresh (591) - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'customerController': Unsatisfied dependency expressed through field 'customerService'; nested exception is org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type 'com.hotel.booking.entity.service.CustomerService' available: expected single matching bean but found 2: com.hotel.booking.entity.service.CustomerService#0,com.hotel.booking.service.implementation.CustomerServiceImpl#0
+2022-04-04 11:18:25 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener logMessage (136) - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-04-04 11:18:25 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter report (40) - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field customerService in com.hotel.booking.controller.CustomerController required a single bean, but 2 were found:
+	- com.hotel.booking.entity.service.CustomerService#0: defined in null
+	- com.hotel.booking.service.implementation.CustomerServiceImpl#0: defined in null
+
+
+Action:
+
+Consider marking one of the beans as @Primary, updating the consumer to accept multiple beans, or using @Qualifier to identify the bean that should be consumed
+
+2022-04-04 11:18:25 [main] ERROR o.s.test.context.TestContextManager prepareTestInstance (252) - Caught exception while allowing TestExecutionListener [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@741a8937] to prepare test instance [com.hotel.booking.controller.CustomerControllerTest@3724b43e]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:132)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:124)
+	at org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.postProcessFields(MockitoTestExecutionListener.java:110)
+	at org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.injectFields(MockitoTestExecutionListener.java:94)
+	at org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.prepareTestInstance(MockitoTestExecutionListener.java:61)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:248)
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:138)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$8(ClassBasedTestDescriptor.java:363)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:368)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$9(ClassBasedTestDescriptor.java:363)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:175)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:312)
+	at java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:743)
+	at java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:742)
+	at java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:580)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:362)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$instantiateAndPostProcessTestInstance$6(ClassBasedTestDescriptor.java:283)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:282)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$4(ClassBasedTestDescriptor.java:272)
+	at java.util.Optional.orElseGet(Optional.java:267)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:271)
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:102)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:101)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:66)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$2(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:90)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:95)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:91)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:60)
+	at org.eclipse.jdt.internal.junit5.runner.JUnit5TestReference.run(JUnit5TestReference.java:89)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:41)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:541)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:763)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:463)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:209)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'customerController': Unsatisfied dependency expressed through field 'customerService'; nested exception is org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type 'com.hotel.booking.entity.service.CustomerService' available: expected single matching bean but found 2: com.hotel.booking.entity.service.CustomerService#0,com.hotel.booking.service.implementation.CustomerServiceImpl#0
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:659)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:639)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:953)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:136)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	... 72 common frames omitted
+Caused by: org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type 'com.hotel.booking.entity.service.CustomerService' available: expected single matching bean but found 2: com.hotel.booking.entity.service.CustomerService#0,com.hotel.booking.service.implementation.CustomerServiceImpl#0
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveNotUnique(DependencyDescriptor.java:220)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1367)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:656)
+	... 91 common frames omitted
+2022-04-04 11:19:43 [main] INFO  c.h.b.c.CustomerControllerTest logStarting (55) - Starting CustomerControllerTest using Java 1.8.0_181 on LP-5CD151G8G4 with PID 48164 (started by anant.mishra in C:\Users\anant.mishra\Documents\workspace-sts-3.9.9.RELEASE\demo)
+2022-04-04 11:19:43 [main] DEBUG c.h.b.c.CustomerControllerTest logStarting (56) - Running with Spring Boot v2.6.5, Spring v5.3.17
+2022-04-04 11:19:43 [main] INFO  c.h.b.c.CustomerControllerTest logStartupProfileInfo (640) - No active profile set, falling back to 1 default profile: "default"
+2022-04-04 11:19:47 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext log (455) - Initializing Spring TestDispatcherServlet ''
+2022-04-04 11:19:47 [main] INFO  o.s.t.w.s.TestDispatcherServlet initServletBean (525) - Initializing Servlet ''
+2022-04-04 11:19:47 [main] INFO  o.s.t.w.s.TestDispatcherServlet initServletBean (547) - Completed initialization in 2 ms
+2022-04-04 11:19:48 [main] INFO  c.h.b.c.CustomerControllerTest logStarted (61) - Started CustomerControllerTest in 5.684 seconds (JVM running for 10.71)
+2022-04-04 11:20:18 [main] INFO  c.h.b.c.CustomerControllerTest logStarting (55) - Starting CustomerControllerTest using Java 1.8.0_181 on LP-5CD151G8G4 with PID 22432 (started by anant.mishra in C:\Users\anant.mishra\Documents\workspace-sts-3.9.9.RELEASE\demo)
+2022-04-04 11:20:18 [main] DEBUG c.h.b.c.CustomerControllerTest logStarting (56) - Running with Spring Boot v2.6.5, Spring v5.3.17
+2022-04-04 11:20:18 [main] INFO  c.h.b.c.CustomerControllerTest logStartupProfileInfo (640) - No active profile set, falling back to 1 default profile: "default"
+2022-04-04 11:20:22 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext log (455) - Initializing Spring TestDispatcherServlet ''
+2022-04-04 11:20:22 [main] INFO  o.s.t.w.s.TestDispatcherServlet initServletBean (525) - Initializing Servlet ''
+2022-04-04 11:20:22 [main] INFO  o.s.t.w.s.TestDispatcherServlet initServletBean (547) - Completed initialization in 3 ms
+2022-04-04 11:20:23 [main] INFO  c.h.b.c.CustomerControllerTest logStarted (61) - Started CustomerControllerTest in 5.968 seconds (JVM running for 11.222)
+2022-04-04 11:23:04 [main] INFO  c.h.b.c.CustomerControllerTest logStarting (55) - Starting CustomerControllerTest using Java 1.8.0_181 on LP-5CD151G8G4 with PID 39660 (started by anant.mishra in C:\Users\anant.mishra\Documents\workspace-sts-3.9.9.RELEASE\demo)
+2022-04-04 11:23:04 [main] DEBUG c.h.b.c.CustomerControllerTest logStarting (56) - Running with Spring Boot v2.6.5, Spring v5.3.17
+2022-04-04 11:23:04 [main] INFO  c.h.b.c.CustomerControllerTest logStartupProfileInfo (640) - No active profile set, falling back to 1 default profile: "default"
+2022-04-04 11:23:09 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext log (455) - Initializing Spring TestDispatcherServlet ''
+2022-04-04 11:23:09 [main] INFO  o.s.t.w.s.TestDispatcherServlet initServletBean (525) - Initializing Servlet ''
+2022-04-04 11:23:09 [main] INFO  o.s.t.w.s.TestDispatcherServlet initServletBean (547) - Completed initialization in 3 ms
+2022-04-04 11:23:09 [main] INFO  c.h.b.c.CustomerControllerTest logStarted (61) - Started CustomerControllerTest in 5.581 seconds (JVM running for 10.633)
+2022-04-04 11:27:01 [main] INFO  c.h.b.c.CustomerControllerTest logStarting (55) - Starting CustomerControllerTest using Java 1.8.0_181 on LP-5CD151G8G4 with PID 39076 (started by anant.mishra in C:\Users\anant.mishra\Documents\workspace-sts-3.9.9.RELEASE\demo)
+2022-04-04 11:27:01 [main] DEBUG c.h.b.c.CustomerControllerTest logStarting (56) - Running with Spring Boot v2.6.5, Spring v5.3.17
+2022-04-04 11:27:01 [main] INFO  c.h.b.c.CustomerControllerTest logStartupProfileInfo (640) - No active profile set, falling back to 1 default profile: "default"
+2022-04-04 11:27:03 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext log (455) - Initializing Spring TestDispatcherServlet ''
+2022-04-04 11:27:03 [main] INFO  o.s.t.w.s.TestDispatcherServlet initServletBean (525) - Initializing Servlet ''
+2022-04-04 11:27:03 [main] INFO  o.s.t.w.s.TestDispatcherServlet initServletBean (547) - Completed initialization in 1 ms
+2022-04-04 11:27:03 [main] INFO  c.h.b.c.CustomerControllerTest logStarted (61) - Started CustomerControllerTest in 2.334 seconds (JVM running for 4.729)
+2022-04-04 11:28:23 [main] INFO  c.h.b.c.CustomerControllerTest logStarting (55) - Starting CustomerControllerTest using Java 1.8.0_181 on LP-5CD151G8G4 with PID 24604 (started by anant.mishra in C:\Users\anant.mishra\Documents\workspace-sts-3.9.9.RELEASE\demo)
+2022-04-04 11:28:23 [main] DEBUG c.h.b.c.CustomerControllerTest logStarting (56) - Running with Spring Boot v2.6.5, Spring v5.3.17
+2022-04-04 11:28:23 [main] INFO  c.h.b.c.CustomerControllerTest logStartupProfileInfo (640) - No active profile set, falling back to 1 default profile: "default"
+2022-04-04 11:28:25 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext log (455) - Initializing Spring TestDispatcherServlet ''
+2022-04-04 11:28:25 [main] INFO  o.s.t.w.s.TestDispatcherServlet initServletBean (525) - Initializing Servlet ''
+2022-04-04 11:28:25 [main] INFO  o.s.t.w.s.TestDispatcherServlet initServletBean (547) - Completed initialization in 1 ms
+2022-04-04 11:28:25 [main] INFO  c.h.b.c.CustomerControllerTest logStarted (61) - Started CustomerControllerTest in 2.532 seconds (JVM running for 5.19)
+2022-04-04 11:31:42 [main] INFO  c.h.b.c.CustomerControllerTest logStarting (55) - Starting CustomerControllerTest using Java 1.8.0_181 on LP-5CD151G8G4 with PID 14532 (started by anant.mishra in C:\Users\anant.mishra\Documents\workspace-sts-3.9.9.RELEASE\demo)
+2022-04-04 11:31:42 [main] DEBUG c.h.b.c.CustomerControllerTest logStarting (56) - Running with Spring Boot v2.6.5, Spring v5.3.17
+2022-04-04 11:31:42 [main] INFO  c.h.b.c.CustomerControllerTest logStartupProfileInfo (640) - No active profile set, falling back to 1 default profile: "default"
+2022-04-04 11:31:43 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext log (455) - Initializing Spring TestDispatcherServlet ''
+2022-04-04 11:31:43 [main] INFO  o.s.t.w.s.TestDispatcherServlet initServletBean (525) - Initializing Servlet ''
+2022-04-04 11:31:43 [main] INFO  o.s.t.w.s.TestDispatcherServlet initServletBean (547) - Completed initialization in 0 ms
+2022-04-04 11:31:44 [main] INFO  c.h.b.c.CustomerControllerTest logStarted (61) - Started CustomerControllerTest in 2.35 seconds (JVM running for 4.787)
+2022-04-04 11:35:35 [main] INFO  c.h.b.c.CustomerControllerTest logStarting (55) - Starting CustomerControllerTest using Java 1.8.0_181 on LP-5CD151G8G4 with PID 50444 (started by anant.mishra in C:\Users\anant.mishra\Documents\workspace-sts-3.9.9.RELEASE\demo)
+2022-04-04 11:35:35 [main] DEBUG c.h.b.c.CustomerControllerTest logStarting (56) - Running with Spring Boot v2.6.5, Spring v5.3.17
+2022-04-04 11:35:35 [main] INFO  c.h.b.c.CustomerControllerTest logStartupProfileInfo (640) - No active profile set, falling back to 1 default profile: "default"
+2022-04-04 11:35:37 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext log (455) - Initializing Spring TestDispatcherServlet ''
+2022-04-04 11:35:37 [main] INFO  o.s.t.w.s.TestDispatcherServlet initServletBean (525) - Initializing Servlet ''
+2022-04-04 11:35:37 [main] INFO  o.s.t.w.s.TestDispatcherServlet initServletBean (547) - Completed initialization in 2 ms
+2022-04-04 11:35:37 [main] INFO  c.h.b.c.CustomerControllerTest logStarted (61) - Started CustomerControllerTest in 2.426 seconds (JVM running for 4.832)
